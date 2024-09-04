@@ -1,9 +1,10 @@
+
+
 *,
 *::before,
 *::after {
   box-sizing: border-box;
   margin: 0;
-  font-weight: normal;
 }
 :root {
   --white:#E1DFDC;

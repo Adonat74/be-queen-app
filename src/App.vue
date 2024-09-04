@@ -13,11 +13,8 @@ import { RouterView } from 'vue-router'
 </template>
 
 <style scoped>
-  
-
-  
-
-
-
+  /* main {
+    padding-top: 40px;
+  } */
 
 </style>

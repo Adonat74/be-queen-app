@@ -5,10 +5,10 @@ import { RouterLink } from 'vue-router'
 
 <template>
   <header>
-    <img alt="be Queen logo" class="logo" src="@/assets/images/logo.png" width="125" height="125" />
+    <img alt="be Queen logo" class="logo" src="@/assets/images/logo.png" width="150" height="150" />
     <nav>
       <RouterLink to="/">ACCUEIL</RouterLink>
-      <a href="">CATALOGUE</a>
+      <RouterLink to="/catalog">CATALOGUE</RouterLink>
       <a href="">PERSONALISATION</a>
       <a href="">CONTACT</a>
       <a href=""><img src="../../assets/icons/cart2.svg" alt="cart icon" width="30" height="30" /></a>
@@ -32,6 +32,7 @@ import { RouterLink } from 'vue-router'
     position: relative;
     left: 20px;
     top: 30px;
+    z-index: 1000;
   }
 
   nav {
@@ -39,6 +40,7 @@ import { RouterLink } from 'vue-router'
     align-items: center;
     justify-content: space-between;
     font-size: 1.15rem;
+    font-weight: 500;
     width: 650px;
     margin-right: 20px;
   }

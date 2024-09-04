@@ -1,6 +1,4 @@
-<script setup>
-
-</script>
+<script setup></script>
 
 <template>
   <footer>
@@ -33,25 +31,25 @@
 </template>
 
 <style scoped>
-    footer {
-    background-color: var(--black);
-    height: 100px;   
-    color: var(--white);
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-  }
+footer {
+  background-color: var(--black);
+  height: 100px;
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
 
-  .socialNetworkLinks {
-    display: flex;
-    align-items: center;
-  }
+.socialNetworkLinks {
+  display: flex;
+  align-items: center;
+}
 
-  .socialNetworkLinks > img {
-    margin-right: 10px;
-  }
+.socialNetworkLinks > img {
+  margin-right: 10px;
+}
 
-  .marginTop {
-    margin-top: 10px;
-  }
+.marginTop {
+  margin-top: 10px;
+}
 </style>
