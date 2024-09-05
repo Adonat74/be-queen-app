@@ -1,20 +1,28 @@
 <script setup>
+import { useCartStore } from '@/stores/cart';
+import { RouterLink } from 'vue-router';
 defineProps(['product'])
-</script>
 
+const store = useCartStore();
+
+</script>
+ 
 <template>
+  <RouterLink :to="`/product/${product.id}`">
     <div class="cardTitle">
       <h3>{{ product.name }}</h3>
       <p>{{ product.price / 100 }} $</p>
     </div>
-    <p>{{ product.description }}</p>
+    <p class="description">{{ product.description }}</p>
     <img
-      src="../assets/images/bikle-modele-R-2024-2-1024x545-2.png"
+      src="../../assets/images/bikle-modele-R-2024-2-1024x545-2.png"
       alt="bike image"
       height="150px"
     />
+  </RouterLink>
+    
     <div class="cardButtons">
-      <button class="addToCartButton">AJOUT PANIER</button>
+      <button class="addToCartButton" @click="store.addProduct(product.id)">AJOUT PANIER</button>
       <button class="personalizeButton">PERSONALISER</button>
     </div>
 </template>
@@ -31,6 +39,10 @@ defineProps(['product'])
     color: var(--yellow);
     font-size: 1.2rem;
     font-weight: 600;
+}
+
+.description {
+    color: black;
 }
 
 .cardButtons button{

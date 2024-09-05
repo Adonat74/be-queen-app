@@ -1,6 +1,6 @@
 <script setup>
-import ProductCard from '@/components/ProductCard.vue';
-import ProductListFilter from '@/components/ProductListFilter.vue';
+import ProductCard from '@/components/productListPage/ProductCard.vue';
+import ProductListFilter from '@/components/productListPage/ProductListFilter.vue';
 import { ref, onMounted } from 'vue';
 import { getAllProductsByCategory } from '../services/modules/productApiCalls';
 
@@ -35,9 +35,9 @@ async function getProductsByCategory(selectedCategory) {
     </div>
 
     <section class="productList">
-        <RouterLink to="/product" class="productCard" v-for="product in products" :key="product.id">
+        <div class="productCard" v-for="product in products" :key="product.id">
             <ProductCard :product="product" />
-        </RouterLink>
+        </div>
     </section>
 </template>
 

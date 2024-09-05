@@ -13,5 +13,14 @@ export async function getAllProductsByCategory(categoryId) {
   } catch (error) {
     console.error(error);
   }
-  
+}
+
+
+export async function getOneProduct(categoryId) {
+  try {
+    const response = await axios.get(`http://127.0.0.1:8000/api/product/${categoryId}`);
+    return response.data.getProductById;
+  } catch (error) {
+    console.error(error);
+  }
 }
