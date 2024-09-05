@@ -1,4 +1,7 @@
-<script setup></script>
+<script setup>
+
+
+</script>
 
 <template>
   <footer>
@@ -31,6 +34,7 @@
 </template>
 
 <style scoped>
+
 footer {
   background-color: var(--black);
   height: 100px;
@@ -38,6 +42,8 @@ footer {
   display: flex;
   align-items: center;
   justify-content: space-around;
+  margin-top: 100px;
+  top: calc(100vh - 100px);
 }
 
 .socialNetworkLinks {

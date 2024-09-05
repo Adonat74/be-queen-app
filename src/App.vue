@@ -21,5 +21,6 @@ const store = useCartStore();
 <style scoped>
   main{
     position: relative;
+    top: 100px;
   }
 </style>

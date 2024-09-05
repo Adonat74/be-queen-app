@@ -31,16 +31,25 @@ body {
     sans-serif;
 }
 
+
+html::-webkit-scrollbar {
+  display: none;
+}
+
 #app {
   min-height: 100vh;
   margin: 0;
   display: grid;
-  grid-template-rows: auto 1fr auto;
+  grid-template-rows: 1fr auto;
 }
 
 html, body {
   height: 100%;
+
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
+
 
 h1, h2, h3, h4, h5, h6 {
   font-family:
@@ -64,3 +73,8 @@ a {
   color: var(--white);
   text-decoration: none;
 }
+
+button, select, option{
+  cursor: pointer;
+}
+

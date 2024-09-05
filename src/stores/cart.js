@@ -11,8 +11,7 @@ export const useCartStore = defineStore('cart', () => {
   }
 
   function removeProduct(productId) {
-    cart.splice(cart.findIndex(x => x == productId), 1);
-    cart.value.push(productId);
+    cart.value.splice(cart.value.findIndex(id => id == productId), 1);
     console.log(cart);
   }
 
@@ -21,7 +20,7 @@ export const useCartStore = defineStore('cart', () => {
   const isDisplayedValue = computed(() => isDisplayed);
 
   function toggleIsDisplayed() {
-    isDisplayed.value = !isDisplayed
+    isDisplayed.value = !isDisplayed.value;
   }
 
   return { cart, cartValue, addProduct, removeProduct, isDisplayed, isDisplayedValue, toggleIsDisplayed }

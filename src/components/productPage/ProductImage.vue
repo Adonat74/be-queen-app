@@ -4,8 +4,8 @@
 
 <template>
     <div class="productImg">
-        <img src="../../assets/images/bikle-modele-s-velo-moto-1 2.png" alt="">
-        <select name="" id="">
+        <img src="../../assets/images/bikle-modele-s-velo-moto-1 2.png" alt="" height="270px" width="500">
+        <select name="" id="ficheTechnique">
             <option value="">Fiche technique</option>
         </select>
     </div>
@@ -13,6 +13,9 @@
 
 <style scoped>
     /* imageComponent */
+    #ficheTechnique{
+        width: 500px;
+    }
     .productImg{
         display: flex;
         flex-direction: column;
