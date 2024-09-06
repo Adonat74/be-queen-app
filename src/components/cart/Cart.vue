@@ -1,6 +1,7 @@
 <script setup>
 import CartListItem from './CartListItem.vue';
 import { useCartStore } from '@/stores/cart';
+import { postOrder } from '@/services/modules/ordersApiCalls';
 
 
 const store = useCartStore();
@@ -18,7 +19,7 @@ const store = useCartStore();
                     <CartListItem :id="id" :index="index"/>
                 </section>
             </div>
-            <button class="validateCart">Valider mon panier</button>
+            <button class="validateCart" @click="postOrder()">Valider mon panier</button>
         </section>
     </div>
 </template>

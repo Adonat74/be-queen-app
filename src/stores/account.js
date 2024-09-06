@@ -10,5 +10,7 @@ export const useAccountStore = defineStore('account', () => {
     isDisplayed.value = !isDisplayed.value;
   }
 
+  
+
   return { isDisplayed, isDisplayedValue, toggleIsDisplayed }
 });
