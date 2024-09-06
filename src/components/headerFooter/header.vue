@@ -16,8 +16,7 @@ const store = useCartStore();
       <div>PERSONALISATION</div>
       <div>CONTACT</div>
       <button @click="store.toggleIsDisplayed()"><img src="../../assets/icons/cart2.svg" alt="cart icon" width="30" height="30" /></button>
-      <button><img src="../../assets/icons/account.svg" alt="account icon" width="30" height="30"
-      /></button>
+      <RouterLink to="/account"><img src="../../assets/icons/account.svg" alt="account icon" width="30" height="30"/></RouterLink>
     </nav>
   </header>
 </template>

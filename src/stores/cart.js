@@ -15,7 +15,7 @@ export const useCartStore = defineStore('cart', () => {
     console.log(cart);
   }
 
-  // gère si le panier doit etre afficher ou pas
+  // gère si le panier doit etre affiché ou pas
   const isDisplayed = ref(false);
   const isDisplayedValue = computed(() => isDisplayed);
 
