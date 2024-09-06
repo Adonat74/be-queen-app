@@ -10,8 +10,8 @@ export const useCartStore = defineStore('cart', () => {
     console.log(cart);
   }
 
-  function removeProduct(productId) {
-    cart.value.splice(cart.value.findIndex(id => id == productId), 1);
+  function removeProduct(productIndex) {
+    cart.value.splice(productIndex, 1);
     console.log(cart);
   }
 

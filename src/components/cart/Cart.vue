@@ -14,8 +14,8 @@ const store = useCartStore();
             <button class="closeButton cartCloseButton" @click="store.toggleIsDisplayed()"><img src="../../assets/icons/cross.svg" alt="cross icon" height="50px" width="50px"></button>
             <h2>VOTRE PANIER</h2>
             <div class="productList">
-                <section class="cartItem" v-for="id in store.cart" :key="id">
-                    <CartListItem :id="id"/>
+                <section class="cartItem" v-for="(id, index) in store.cart" :key="id">
+                    <CartListItem :id="id" :index="index"/>
                 </section>
             </div>
             <button class="validateCart">Valider mon panier</button>

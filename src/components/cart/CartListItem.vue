@@ -13,6 +13,9 @@ const product = ref({})
 const props = defineProps({
   id: {
     type: Number
+  },
+  index: {
+    type: Number
   }
 });
 
@@ -32,7 +35,7 @@ onMounted(async () => {
         <p class="custom">modifications ></p>
         <p>{{ product.price/100 }}$</p>
     </div>
-    <div class="buttonDiv" @click="store.removeProduct(props.id)">
+    <div class="buttonDiv" @click="store.removeProduct(props.index)">
         <button class="closeButton"><img src="../../assets/icons/cross.svg" alt="cross icon" height="30px" width="30px"></button>
     </div>
 </template>
