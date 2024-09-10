@@ -3,43 +3,45 @@ import { ref } from 'vue';
 import ToggleButton from './ToggleButton.vue';
 import { loginUser } from '@/services/modules/loginRegisterAPICalls';
 
+
 const formValue = ref({
     email: "",
     password: "",
 });
 
+
+// const methodThatForcesUpdate = () => {
+//   const instance = getCurrentInstance();
+//   instance.proxy.forceUpdate();
+// };
+
+// async function login(formValue) {
+//     await loginUser(formValue);
+
+// }
+
 </script>
 
 <template>
-    <div class="formContainer">
-        <section>
-            <h1>CONNECTEZ-VOUS</h1>
-            <form action="">
-                <input class="textInput" type="email" placeholder="EMAIL" v-model="formValue.email">
-                <input class="textInput" type="password" placeholder="MOT DE PASSE" v-model="formValue.password">
-                <div class="formFooter">
-                    <div>
-                        <p>Mot de passe oublié ?</p>
-                        <p>Vous êtes un noob ?</p>
-                    </div>
-                    <input class="registerButton" type="button" value="Se connecter" @click="loginUser(formValue)">
+    <section>
+        <h1>CONNECTEZ-VOUS</h1>
+        <form action="">
+            <input class="textInput" type="email" placeholder="EMAIL" v-model="formValue.email">
+            <input class="textInput" type="password" placeholder="MOT DE PASSE" v-model="formValue.password">
+            <div class="formFooter">
+                <div>
+                    <p>Mot de passe oublié ?</p>
+                    <p>Vous êtes un noob ?</p>
                 </div>
-            </form>
-            <ToggleButton buttonText="INSCRIPTION"/>
-        </section>
-    </div>
+                <input class="registerButton" type="button" value="Se connecter" @click="loginUser(formValue)">
+            </div>
+        </form>
+        <ToggleButton buttonText="INSCRIPTION"/>
+    </section>
 </template>
 
 <style scoped>
     
-    .formContainer{
-        width: 100%;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: white;
-    }
     section{
         background-color: var(--black);
         display: flex;

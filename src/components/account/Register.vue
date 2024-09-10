@@ -2,6 +2,10 @@
 import { ref } from 'vue';
 import ToggleButton from './ToggleButton.vue';
 import { registerUser } from '@/services/modules/loginRegisterAPICalls';
+import { useAccountStore } from '@/stores/account';
+
+
+const store = useAccountStore();
 
 const formValue = ref({
     first_name: "",
@@ -15,29 +19,33 @@ const formValue = ref({
     is_admin:false
 });
 
+function register(formValue) {
+    registerUser(formValue);
+    store.toggleIsDisplayed()
+}
+
+ 
 </script>
 
 <template>
-    <div class="formContainer">
-        <section>
-            <h1>INSCRIVEZ-VOUS</h1>
-            <form action="">
-                <input class="textInput" type="text" placeholder="NOM" v-model="formValue.last_name">
-                <input class="textInput" type="text" placeholder="PRENOM" v-model="formValue.first_name">
-                <input class="textInput" type="email" placeholder="ADRESSE-MAIL" v-model="formValue.email">
-                <input class="textInput" type="password" placeholder="MOT DE PASSE" v-model="formValue.password">
-                <input class="textInput" type="password" placeholder="ENTRER DE NOUVEAU VOTRE MOT DE PASSE">
-                <div class="formFooter">
-                    <div>
-                        <label for="">Accepter les conditions</label>
-                        <input type="checkbox">
-                    </div>
-                    <input class="registerButton" type="button" value="Inscrivez-vous" @click="registerUser(formValue)">
+    <section>
+        <h1>INSCRIVEZ-VOUS</h1>
+        <form action="">
+            <input class="textInput" type="text" placeholder="NOM" v-model="formValue.last_name">
+            <input class="textInput" type="text" placeholder="PRENOM" v-model="formValue.first_name">
+            <input class="textInput" type="email" placeholder="ADRESSE-MAIL" v-model="formValue.email">
+            <input class="textInput" type="password" placeholder="MOT DE PASSE" v-model="formValue.password">
+            <input class="textInput" type="password" placeholder="ENTRER DE NOUVEAU VOTRE MOT DE PASSE">
+            <div class="formFooter">
+                <div>
+                    <label for="">Accepter les conditions</label>
+                    <input type="checkbox">
                 </div>
-            </form>
-            <ToggleButton buttonText="CONNEXION"/>
-        </section>
-    </div>
+                <input class="registerButton" type="button" value="Inscrivez-vous" @click="register(formValue)">
+            </div>
+        </form>
+        <ToggleButton buttonText="CONNEXION"/>
+    </section>
 </template>
 
 <style scoped>
